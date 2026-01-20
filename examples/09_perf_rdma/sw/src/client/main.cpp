@@ -79,7 +79,7 @@ double run_bench(
         for (int i = 0; i < sg.len / sizeof(int); i++) {
             if(mem[i] == i){
                 std::cerr << "FAILED - incorrect memory content" << std::endl;
-                return;
+                return -1;
             };
         }
     }
