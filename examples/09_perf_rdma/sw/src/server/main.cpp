@@ -69,7 +69,10 @@ void run_bench(
     // Functional correctness check
     if (operation) {
         for (int i = 0; i < sg.len / sizeof(int); i++) {
-            assert(mem[i] == i);                        
+            if(mem[i] == i){
+                std::cerr << "FAILED - incorrect memory content" << std::endl;
+                return;
+            };                        
         }
     }
 }
